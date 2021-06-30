@@ -87,6 +87,8 @@ describe("Dummy", () => {
     const deploymentResult = await deploymentTransaction.wait()
 
     expect(deploymentResult.status).to.equal(1)
+
+    // This is the only failing expectation in the hardhat case.
     expect(await provider.getCode(dummyAddress, "latest")).to.not.equal(
       "0x",
       `expected non-empty code at Dummy CREATE2 address ${dummyAddress}`

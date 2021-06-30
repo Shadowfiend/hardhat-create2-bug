@@ -8,7 +8,8 @@ with the two demonstrative tests, [`DummyTest.ts`](./test/DummyTest.ts).
 The test runs the exact same CREATE2 deployment using Waffle's bare
 MockProvider, and using Hardhat's wrapped version of that provider. The hardhat
 version does not result in deployed code, while the Waffle MockProvider test
-results in deployed code.
+results in deployed code. All expectations pass for both providers expect for
+the [very last one](./test/DummyTest.ts#L91-L94).
 
 The CREATE2 deployment is done using the
 [EIP-2470](https://eips.ethereum.org/EIPS/eip-2470) `SingletonFactory`. The
